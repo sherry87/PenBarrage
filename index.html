@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/style.css" />
+		<script type="text/javascript" src="js/jquery-1.11.1.js" ></script>
+		<script type="text/javascript" src="js/barrage.js" ></script>
+	</head>
+	<body>
+		<div class="main">
+			<div class="barrage">
+			</div>
+		<div class="oper">
+			<input type="text" class="ipt" id="message" />
+			<button class="btn btn-blue" type="button" onclick="send()">发射</button>
+			<button class="btn btn-warn" type="button" onclick="clearItem()">清屏</button>
+		</div>
+		</div>
+	</body>
+</html>
+<script>
+
+	var barrage=null;
+	var messageArr = [];
+	$(function(){
+		setInterval("randomSend()",2000);
+	});
+	
+	function send(){
+		var message = $("#message").val();
+		$("#message").val("");
+		if(barrage==null){
+			barrage = $(".barrage").barrage({"message":message});
+		}else{
+			barrage.add({"message":message});
+		}
+		
+		messageArr.push(message);
+	}
+	//清屏
+	function clearItem(){
+		if(barrage!=null){
+			barrage.clear();
+			messageArr=[];
+		}
+	}
+	
+	function randomSend(){
+		if(messageArr.length>0){
+			var n = Math.floor(Math.random() * messageArr.length + 1) - 1;
+			barrage.add({"message":messageArr[n]});
+		}
+	}
+	
+	
+</script>

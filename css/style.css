@@ -1,0 +1,105 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+html,
+body {
+	position: relative;
+	width: 100%;
+	font-family: "微软雅黑";
+}
+
+.clearfix:after {
+	content: "\200B";
+	display: block;
+	height: 0;
+	clear: both;
+}
+
+.clearfix {
+	*zoom: 1;
+}
+
+input,
+textarea,
+button {
+	outline: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.main {
+	width: 400px;
+	margin: 20px auto;
+	overflow: hidden;
+	height: 500px;
+	position: relative;
+}
+
+.barrage {
+	width: 100%;
+	border: 1px solid #ccc;
+	height: 400px;
+	position: relative;
+}
+
+.b-message{
+	position: absolute;
+}
+.oper {
+	margin-top: 15px;
+}
+
+.ipt {
+	width: 230px;
+	padding: 0 10px;
+}
+
+.ipt,
+.btn {
+	float: left;
+	margin-right: 10px;
+	height: 35px;
+	line-height: 35px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.btn {
+	padding: 0 20px;
+	background: #fff;
+	cursor: pointer;
+}
+
+.btn.btn-blue {
+	color: #fff;
+	background-color: #337ab7;
+	border-color: #2e6da4;
+}
+
+.btn.btn-blue:hover {
+	color: #fff;
+	background-color: #286090;
+	border-color: #204d74;
+}
+
+.btn.btn-warn {
+	color: #fff;
+	background-color: #f0ad4e;
+	border-color: #eea236;
+}
+
+.btn.btn-warn:hover {
+	color: #fff;
+	background-color: #ed9912;
+	border-color: #eea236;
+}
